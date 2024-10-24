@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Container Styling */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+/* About Section */
+#about {
+    background-color: #ecf0f1;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
+    color: #7f8c8d;
+}
+
+/* Gallery Section */
+#gallery {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+}
+
+#gallery h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Grid container for the gallery with 4 columns */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns in larger screens */
+    grid-gap: 20px; /* Space between each image */
+    margin-top: 20px;
+    padding: 0 10px; /* Some padding for container to prevent touching the edges */
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow to give depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    height: 200px; /* Set a fixed height for all items to be consistent */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Maintain image aspect ratio without empty spaces */
+.gallery-item img {
+    width: 100%; /* Image fills the width of the container */
+    height: 100%; /* Image also fills the height of the container */
+    object-fit: cover; /* Ensures image scales without distorting, covers the container */
+    display: block;
+    border-radius: 10px;
+    transition: filter 0.3s ease; /* Smooth transition for filter effect */
+}
+
+.gallery-item img:hover {
+    filter: brightness(85%); /* Darken image slightly on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
+
+
+/* Contact Section */
+#contact {
+    background-color: #ecf0f1;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+.social-media {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-media a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #f39c12;
+}
+
+.instagram-icon {
+    width: 150px;
+    height: 90px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin-top: 20px;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(85%);
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
